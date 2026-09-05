@@ -9,6 +9,8 @@ const pages = {
   'web-dizainas.html': 'web-dizainas/index.html',
   'seo-paslaugos.html': 'seo-paslaugos/index.html',
   'brandingo-kurimas.html': 'brandingo-kurimas/index.html',
+  'google-ads.html': 'google-ads/index.html',
+  'verslo-procesu-automatizavimas.html': 'verslo-procesu-automatizavimas/index.html',
   'svetaines-auditas.html': 'svetaines-auditas/index.html',
   'zinios.html': 'zinios/index.html',
   'kodel-svetaine-neatnesa-klientu.html': 'zinios/kodel-svetaine-neatnesa-klientu/index.html',
