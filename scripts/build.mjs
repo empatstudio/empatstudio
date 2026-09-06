@@ -5,6 +5,8 @@ const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, 'dist');
 const pages = {
   'index.html': 'index.html',
+  'apie.html': 'apie/index.html',
+  'paslaugos.html': 'paslaugos/index.html',
   'svetainiu-kurimas.html': 'svetainiu-kurimas/index.html',
   'web-dizainas.html': 'web-dizainas/index.html',
   'seo-paslaugos.html': 'seo-paslaugos/index.html',
