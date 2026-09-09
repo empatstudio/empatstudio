@@ -18,6 +18,7 @@ const pages = {
   'kodel-svetaine-neatnesa-klientu.html': 'zinios/kodel-svetaine-neatnesa-klientu/index.html',
   'seo-pries-svetaines-dizaina.html': 'zinios/seo-pries-svetaines-dizaina/index.html',
   'pirma-brandingas-ar-svetaine.html': 'zinios/pirma-brandingas-ar-svetaine/index.html',
+  'vejos-robotai.html': 'darbai/vejos-robotai/index.html',
   'privatumo-politika.html': 'privatumo-politika/index.html'
 };
 

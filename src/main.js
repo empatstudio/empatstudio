@@ -18,7 +18,9 @@ if (!reduceMotion) {
   const animatedElements = document.querySelectorAll([
     '.reveal', '.section-heading', '.service-grid article', '.projects article',
     '.timeline li', '.review-grid blockquote', '.knowledge-grid article', '.faq details',
-    '.content-section', '.feature-cards article', '.service-detail', '.article-body > *'
+    '.content-section', '.feature-cards article', '.service-detail', '.article-body > *',
+    '.case-mockup-heading', '.device-composition', '.case-brief-columns article',
+    '.case-step', '.tesora-brand-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article'
   ].join(','));
 
   animatedElements.forEach((element, index) => {
