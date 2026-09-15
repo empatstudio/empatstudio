@@ -138,6 +138,53 @@
 .project-card-link .project-cover img{width:100%;height:100%;object-fit:cover}
 .project-card-copy{padding:22px 10px}
 
+/* InnoHub Lithuania UX/UI case study */
+.innohub-case{--inno-green:#36e056;--inno-teal:#003c3a;--inno-mint:#dff7e5;--inno-paper:#f7f9f5}
+.innohub-case :focus-visible{outline-color:var(--inno-green)}
+.innohub-case-hero{background:radial-gradient(circle at 10% 8%,#fff 0,transparent 32%),linear-gradient(128deg,#f5f1e9 28%,#dbe9df)}
+.innohub-case-hero h1 em{color:var(--inno-teal)}
+.innohub-surface{background:radial-gradient(circle at 86% 18%,rgba(54,224,86,.28),transparent 24%),linear-gradient(145deg,#064e4b,var(--inno-teal));color:#fff}
+.innohub-surface:before{border-color:rgba(54,224,86,.42)}
+.innohub-case .case-brand-label{color:var(--inno-green)}
+.innohub-logo-plate{width:min(100%,440px);min-height:238px;padding:28px;border-radius:22px 22px 72px 22px;background:#fff;display:grid;place-items:center;position:relative;z-index:2}
+.innohub-logo-plate img{width:min(100%,300px)}
+.innohub-grid-mark{position:absolute;width:188px;height:188px;right:-48px;bottom:-45px;background-image:radial-gradient(circle,rgba(54,224,86,.8) 2px,transparent 2.5px);background-size:18px 18px;transform:rotate(-9deg);opacity:.55}
+.innohub-mockup-stage{background:radial-gradient(circle at 85% 12%,rgba(54,224,86,.16),transparent 24%),var(--inno-teal)}
+.innohub-mockup-stage .case-mockup-heading>p{max-width:420px;margin:0;color:#c8ddda}
+.innohub-mockup-stage .case-mockup-heading h2 em{color:var(--inno-green)}
+.innohub-system{background:var(--inno-paper)}
+.innohub-system-head{max-width:940px;margin-bottom:58px}
+.innohub-system-head h2{font-size:clamp(2.65rem,5vw,5.15rem);line-height:1;letter-spacing:-.055em;margin:12px 0 26px}
+.innohub-system-head h2 em{color:var(--inno-teal)}
+.innohub-system-head p{max-width:720px;color:#4e5b58}
+.innohub-system-grid{display:grid;gap:14px}
+.innohub-system-grid>article{margin:0;border-radius:26px;padding:clamp(28px,4vw,48px)}
+.innohub-palette-card>span,.innohub-components-card>span{text-transform:uppercase;letter-spacing:.14em;font-size:.69rem;font-weight:700;color:var(--inno-teal)}
+.innohub-palette-card{background:var(--inno-teal);color:#fff;display:flex;flex-direction:column;gap:28px}
+.innohub-palette-card>span{color:var(--inno-green)}
+.innohub-swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:1}
+.innohub-swatch{min-height:230px;border-radius:12px;padding:18px;display:flex;flex-direction:column;justify-content:end}
+.innohub-swatch strong{font-size:.78rem}
+.innohub-swatch small{font-size:.66rem;margin-top:3px}
+.innohub-swatch-green{background:var(--inno-green);color:var(--inno-teal)}
+.innohub-swatch-teal{background:#002d2c;border:1px solid rgba(255,255,255,.18)}
+.innohub-swatch-white{background:#fff;color:var(--inno-teal)}
+.innohub-components-card{grid-column:1/-1;background:var(--inno-mint)}
+.innohub-icon-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.innohub-icon-row figure{min-height:178px;margin:0;padding:24px;border-radius:18px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.innohub-icon-row img{width:70px;height:70px;object-fit:contain;margin-bottom:18px}
+.innohub-icon-row figcaption{font-size:.75rem;font-weight:600;color:var(--inno-teal)}
+.innohub-gallery{background:#e5eee7}
+.innohub-gallery .section-heading>p{color:#4b5b56}
+.innohub-photo-card{margin:0;background:#fff;border:10px solid #fff;border-radius:24px;overflow:hidden;box-shadow:0 20px 55px rgba(0,60,58,.15)}
+.innohub-photo-card img{width:100%;height:540px;object-fit:cover}
+.innohub-photo-card figcaption{padding:14px 10px 5px;color:#4c5a57;font-size:.78rem}
+.innohub-gallery-note{background:var(--inno-teal)}
+.innohub-gallery-note .eyebrow{color:var(--inno-green)}
+.innohub-final-cta{background:radial-gradient(circle at 84% 18%,rgba(54,224,86,.18),transparent 28%),var(--inno-teal)}
+.innohub-final-cta .button{background:var(--inno-green);border-color:var(--inno-green);color:var(--inno-teal)}
+.innohub-final-cta .button:hover{background:#7bed8e}
+
 @media(max-width:1050px){
   .case-hero{grid-template-columns:1fr .72fr;gap:42px}
   .case-hero-brand{min-height:420px}
@@ -146,6 +193,7 @@
   .case-gallery-grid{grid-template-columns:1fr}
   .case-gallery-note{min-height:500px}
   .mini-phone{width:220px;margin:30px auto -270px}
+  .innohub-components-card{grid-column:auto}
 }
 @media(max-width:760px){
   .case-hero{min-height:auto;grid-template-columns:1fr;padding-top:122px;padding-bottom:70px}
@@ -173,6 +221,10 @@
   .case-outcome-grid article{min-height:auto}
   .case-services-strip{align-items:flex-start;flex-direction:column}
   .case-services-strip nav{justify-content:flex-start}
+  .innohub-swatches{grid-template-columns:1fr}
+  .innohub-swatch{min-height:130px}
+  .innohub-icon-row{grid-template-columns:repeat(2,1fr)}
+  .innohub-photo-card img{height:430px}
 }
 @media(max-width:520px){
   .case-hero .actions{align-items:flex-start;flex-direction:column;gap:18px}
@@ -186,7 +238,38 @@
   .tesora-quote-card p{font-size:1.45rem}
   .case-services-strip nav{display:grid;width:100%}
   .case-services-strip a{text-align:center}
+  .innohub-logo-plate{min-height:190px;padding:24px}
+  .innohub-icon-row{grid-template-columns:1fr 1fr;gap:8px}
+  .innohub-icon-row figure{min-height:145px;padding:18px}
+  .innohub-photo-card img{height:330px}
 }
 @media(prefers-reduced-motion:reduce){
   .case-study *{scroll-behavior:auto}
 }
+
+/* Marketingo paslaugų kryptis */
+.marketing-hero{position:relative;isolation:isolate;overflow:hidden}
+.marketing-hero:after{content:"";position:absolute;width:460px;height:460px;right:-90px;bottom:-210px;border-radius:50%;background:radial-gradient(circle,var(--sand),transparent 67%);filter:blur(20px);opacity:.6;z-index:-1}
+.marketing-hero>p{max-width:780px}
+.marketing-services{background:#e9e2d8}
+.marketing-services .section-heading>p{color:#545b53}
+.marketing-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.marketing-grid article{grid-column:span 2;min-height:330px;padding:30px;background:#fff;display:flex;flex-direction:column;border-radius:8px 8px 34px 8px;transition:transform .35s ease,box-shadow .35s ease}
+.marketing-grid article:nth-child(4),.marketing-grid article:nth-child(5){grid-column:span 3}
+.marketing-grid article:hover{transform:translateY(-6px);box-shadow:0 18px 45px #1d1d1b18}
+.marketing-grid article>span{color:var(--forest);font-size:.72rem;font-weight:700}
+.marketing-grid h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.15;margin:48px 0 16px}
+.marketing-grid p{font-size:.91rem;color:#50564f}
+.marketing-grid a{margin-top:auto;color:var(--forest);font-weight:700;text-decoration:none}
+.marketing-system{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(50px,8vw,120px);background:radial-gradient(circle at 8% 90%,rgba(236,207,182,.16),transparent 27%),#111812;color:#fff}
+.marketing-system-copy h2{font-size:clamp(2.6rem,5vw,5.2rem);line-height:1;letter-spacing:-.055em;margin:12px 0 30px}
+.marketing-system-copy h2 em{color:var(--sand)}
+.marketing-system-copy p{max-width:600px;color:#c5ccc4}
+.marketing-flow{list-style:none;padding:0;margin:0}
+.marketing-flow li{display:grid;grid-template-columns:55px 1fr;gap:20px;padding:25px 0;border-top:1px solid rgba(255,255,255,.2)}
+.marketing-flow li>span{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;color:var(--sand);font-size:.72rem;font-weight:700}
+.marketing-flow h3{font-size:1.25rem;margin:5px 0 7px}
+.marketing-flow p{margin:0;color:#c5ccc4;font-size:.9rem}
+.marketing-detail{background:#f4e6d8}
+@media(max-width:900px){.marketing-grid article{grid-column:span 3}.marketing-grid article:nth-child(5){grid-column:1/-1}.marketing-system{grid-template-columns:1fr}}
+@media(max-width:600px){.marketing-grid{grid-template-columns:1fr}.marketing-grid article,.marketing-grid article:nth-child(4),.marketing-grid article:nth-child(5){grid-column:auto;min-height:auto}.marketing-grid h3{margin-top:34px}.marketing-hero .actions{align-items:flex-start;flex-direction:column;gap:18px}}

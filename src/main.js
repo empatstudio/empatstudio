@@ -20,7 +20,8 @@ if (!reduceMotion) {
     '.timeline li', '.review-grid blockquote', '.knowledge-grid article', '.faq details',
     '.content-section', '.feature-cards article', '.service-detail', '.article-body > *',
     '.case-mockup-heading', '.device-composition', '.case-brief-columns article',
-    '.case-step', '.tesora-brand-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article'
+    '.case-step', '.tesora-brand-grid > *', '.innohub-system-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article',
+    '.marketing-grid article', '.marketing-flow li'
   ].join(','));
 
   animatedElements.forEach((element, index) => {

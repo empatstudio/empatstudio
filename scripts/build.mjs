@@ -12,6 +12,7 @@ const pages = {
   'seo-paslaugos.html': 'seo-paslaugos/index.html',
   'brandingo-kurimas.html': 'brandingo-kurimas/index.html',
   'google-ads.html': 'google-ads/index.html',
+  'marketingo-paslaugos.html': 'marketingo-paslaugos/index.html',
   'verslo-procesu-automatizavimas.html': 'verslo-procesu-automatizavimas/index.html',
   'svetaines-auditas.html': 'svetaines-auditas/index.html',
   'zinios.html': 'zinios/index.html',
@@ -19,6 +20,7 @@ const pages = {
   'seo-pries-svetaines-dizaina.html': 'zinios/seo-pries-svetaines-dizaina/index.html',
   'pirma-brandingas-ar-svetaine.html': 'zinios/pirma-brandingas-ar-svetaine/index.html',
   'vejos-robotai.html': 'darbai/vejos-robotai/index.html',
+  'innohub-lithuania.html': 'darbai/innohub-lithuania/index.html',
   'privatumo-politika.html': 'privatumo-politika/index.html'
 };
 
