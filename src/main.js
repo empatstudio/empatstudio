@@ -21,7 +21,8 @@ if (!reduceMotion) {
     '.content-section', '.feature-cards article', '.service-detail', '.article-body > *',
     '.case-mockup-heading', '.device-composition', '.case-brief-columns article',
     '.case-step', '.tesora-brand-grid > *', '.innohub-system-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article',
-    '.marketing-grid article', '.marketing-flow li'
+    '.marketing-grid article', '.marketing-flow li', '.dz-persona-grid article',
+    '.dz-identity-grid > *', '.dz-gallery-grid > *'
   ].join(','));
 
   animatedElements.forEach((element, index) => {

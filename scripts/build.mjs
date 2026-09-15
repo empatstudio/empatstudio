@@ -21,6 +21,7 @@ const pages = {
   'pirma-brandingas-ar-svetaine.html': 'zinios/pirma-brandingas-ar-svetaine/index.html',
   'vejos-robotai.html': 'darbai/vejos-robotai/index.html',
   'innohub-lithuania.html': 'darbai/innohub-lithuania/index.html',
+  'dainius-zalimas.html': 'darbai/dainius-zalimas/index.html',
   'privatumo-politika.html': 'privatumo-politika/index.html'
 };
 
