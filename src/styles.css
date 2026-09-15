@@ -337,3 +337,13 @@
 @media(max-width:1050px){.dz-personas-head{grid-template-columns:1fr;gap:26px}.dz-persona-grid{grid-template-columns:1fr}.dz-persona-grid article{min-height:auto}.dz-gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.dz-photo-main{grid-column:1/-1;grid-row:auto}.dz-photo-main img{min-height:500px}}
 @media(max-width:760px){.dz-identity-grid{grid-template-columns:1fr}.dz-palette-card{grid-column:auto}.dz-swatches{grid-template-columns:1fr}.dz-swatch{min-height:128px}.dz-gallery-grid{grid-template-columns:1fr}.dz-photo-main{grid-column:auto}.dz-photo-main img,.dz-topic-card img{min-height:360px}.dz-surface{min-height:390px}.dz-portrait-frame{right:-24%;width:120%;height:74%}.dz-surface>p{max-width:165px;bottom:28px}.dz-persona-grid article>span{margin-bottom:28px}}
 @media(max-width:520px){.dz-brand-logo{margin-top:34px}.dz-surface{min-height:330px}.dz-portrait-frame{right:-29%;width:132%;height:70%}.dz-surface>p{font-size:.76rem;max-width:145px}.dz-photo-main img,.dz-topic-card img{min-height:300px}}
+
+/* Apie įkūrėją */
+.founder-about{align-items:start}
+.founder-about .about-visual{position:sticky;top:110px}
+.founder-story h2{max-width:760px}
+.founder-story p{max-width:720px;line-height:1.72}
+.founder-story p+p{margin-top:18px}
+.founder-story .button{margin-top:12px}
+.nowrap{white-space:nowrap}
+@media(max-width:900px){.founder-about .about-visual{position:relative;top:auto}}
