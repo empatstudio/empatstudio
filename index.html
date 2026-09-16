@@ -125,14 +125,84 @@
 
     <div class="values"><span>✦ Empatija</span><span>✦ Kokybė</span><span>✦ Profesionalumas</span><span>✦ Nuoširdumas</span><span>✦ Skaidrumas</span></div>
 
-    <section class="reviews section" id="atsiliepimai">
-      <span class="eyebrow">Atsiliepimai</span><h2>Verslai, kurie vertina <em>rezultatą.</em></h2>
-      <div class="review-grid">
-        <blockquote><div>★★★★★</div><p>„Augustė – nepaprastai atsakinga ir supratinga. Dirbti buvo tikras malonumas. Didžiausios rekomendacijos!“</p><footer>Ieva Perednytė · forestoasis.lt</footer></blockquote>
-        <blockquote><div>★★★★★</div><p>„Augustė ne tik klausė – ji išgirdo. Sugrąžino pasitikėjimą procesu ir sukūrė nuostabią, elegantišką svetainę.“</p><footer>Agnesa Seriogina · buklaukine.lt</footer></blockquote>
-        <blockquote><div>★★★★★</div><p>„Darbas pranoko visus komandos lūkesčius. Profesionalu ir nuoširdžiai draugiška – norime tęsti partnerystę.“</p><footer>Kazimieras Daukšys · mytravis.com</footer></blockquote>
+    <section class="reviews section" id="atsiliepimai" data-review-carousel aria-labelledby="reviews-title" aria-roledescription="karuselė">
+      <div class="reviews-heading">
+        <div>
+          <span class="eyebrow">Atsiliepimai</span>
+          <h2 id="reviews-title">Verslai, kurie vertina <em>rezultatą.</em></h2>
+        </div>
+        <div class="review-controls" aria-label="Atsiliepimų karuselės valdymas">
+          <button class="review-arrow" type="button" data-review-prev aria-label="Ankstesnis atsiliepimas">←</button>
+          <span class="review-count" aria-live="polite"><span data-review-current>01</span> / 04</span>
+          <button class="review-arrow" type="button" data-review-next aria-label="Kitas atsiliepimas">→</button>
+        </div>
       </div>
-      <div class="reviews-action"><a class="button button-outline" href="https://www.facebook.com/empatstudio/reviews/" target="_blank" rel="noopener noreferrer">Daugiau atsiliepimų ↗</a></div>
+
+      <div class="review-viewport">
+        <div class="review-track" data-review-track>
+          <blockquote class="review-slide is-active" data-review-slide aria-hidden="false">
+            <span class="review-quote-mark" aria-hidden="true">“</span>
+            <div class="review-body">
+              <p>Augustė turi gerą akį dizainui ir sukūrė vizualiai patrauklią ir patogią mūsų verslo svetainę. Dėmesingai skyrė laiko suprasti mūsų poreikius ir tikslus bei įtraukė juos į galutinį dizainą. Augustė buvo labai atsakinga ir atvira pastaboms viso proceso metu, greitai ir efektyviai atliko visus būtinus pakeitimus. Labai rekomenduoju šią dizainerę visiems, kuriems reikia profesionalaus ir talentingo asmens svetainės sukūrimui.</p>
+              <footer class="review-person">
+                <strong>Monika Laukytė</strong>
+                <span>Vadovo padėjėja · UAB „Packus“</span>
+              </footer>
+            </div>
+          </blockquote>
+
+          <blockquote class="review-slide" data-review-slide aria-hidden="true">
+            <span class="review-quote-mark" aria-hidden="true">“</span>
+            <div class="review-body">
+              <p>Su Auguste atlikome didelį analitinį ir kūrybinį darbą – vartotojo, ieškančio odontologijos paslaugų, kelionės analizę, o pagal ją – naujo puslapio struktūrą bei dizainą.</p>
+              <p>Šiame darbe išryškėjo trys svarbūs dalykai:</p>
+              <ol class="review-points">
+                <li>Augustė įvertina visas aplinkybes;</li>
+                <li>nepalieka sudėtingų klausimų be atsakymų;</li>
+                <li>įsijaučia į analizuojamo verslo scenarijus.</li>
+              </ol>
+              <p>Visa tai padėjo sukurti kokybišką, realiems vartotojo poreikiams pritaikytą puslapį.</p>
+              <footer class="review-person">
+                <strong>Vaida</strong>
+                <span>Marketingo vadovė · <a href="http://www.gerasodontologas.lt" target="_blank" rel="noopener noreferrer">gerasodontologas.lt</a></span>
+              </footer>
+            </div>
+          </blockquote>
+
+          <blockquote class="review-slide" data-review-slide aria-hidden="true">
+            <span class="review-quote-mark" aria-hidden="true">“</span>
+            <div class="review-body">
+              <p>Nuo visos „MyTravis“ komandos norime nuoširdžiai padėkoti „Empat.studio“ už profesionaliai atliktą darbą ir nuostabų tarpusavio bendradarbiavimą. Jūsų darbas buvo atliktas geriau, nei tikėjomės, ir viršijo visus mūsų lūkesčius. Bendravimas su jūsų komanda buvo ne tik profesionalus, bet ir draugiškas, kas mums buvo itin svarbu. Esame labai patenkinti jūsų paslaugomis ir tikimės tęsti bendradarbiavimą ateityje. Ačiū jums dar kartą!</p>
+              <footer class="review-person">
+                <strong>Kazimieras Daukšys</strong>
+                <span><a href="https://mytravis.com" target="_blank" rel="noopener noreferrer">mytravis.com</a></span>
+              </footer>
+            </div>
+          </blockquote>
+
+          <blockquote class="review-slide" data-review-slide aria-hidden="true">
+            <span class="review-quote-mark" aria-hidden="true">“</span>
+            <div class="review-body">
+              <p>Labai labai ačiū Augustei, kuri nepriekaištingai atliko savo darbą. Suprato visus mano norus ir įgeidžius. Gavosi nuostabus ir elegantiškas puslapis <a href="https://www.buklaukine.lt" target="_blank" rel="noopener noreferrer">www.buklaukine.lt</a>.</p>
+              <p>Po praeito IT specialisto buvau pasimetusi, o Augustė ne tik klausėsi, bet ir išgirdo. Ačiū už malonų bendravimą ir atsidavimą savo darbui ❤</p>
+              <footer class="review-person">
+                <strong>Agnesa Seriogina</strong>
+                <span><a href="https://www.buklaukine.lt" target="_blank" rel="noopener noreferrer">buklaukine.lt</a></span>
+              </footer>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="review-footer-row">
+        <div class="review-dots" aria-label="Pasirinkti atsiliepimą">
+          <button class="review-dot is-active" type="button" data-review-dot="0" aria-label="Rodyti Monikos atsiliepimą" aria-current="true"></button>
+          <button class="review-dot" type="button" data-review-dot="1" aria-label="Rodyti Vaidos atsiliepimą" aria-current="false"></button>
+          <button class="review-dot" type="button" data-review-dot="2" aria-label="Rodyti Kazimiero atsiliepimą" aria-current="false"></button>
+          <button class="review-dot" type="button" data-review-dot="3" aria-label="Rodyti Agnesos atsiliepimą" aria-current="false"></button>
+        </div>
+        <a class="button button-outline" href="https://www.facebook.com/empatstudio/reviews/" target="_blank" rel="noopener noreferrer">Daugiau atsiliepimų ↗</a>
+      </div>
     </section>
 
     <section class="faq section" id="duk">

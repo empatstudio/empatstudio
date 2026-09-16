@@ -14,10 +14,82 @@ nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const reviewCarousel = document.querySelector('[data-review-carousel]');
+
+if (reviewCarousel) {
+  const track = reviewCarousel.querySelector('[data-review-track]');
+  const slides = [...reviewCarousel.querySelectorAll('[data-review-slide]')];
+  const dots = [...reviewCarousel.querySelectorAll('[data-review-dot]')];
+  const previousButton = reviewCarousel.querySelector('[data-review-prev]');
+  const nextButton = reviewCarousel.querySelector('[data-review-next]');
+  const currentLabel = reviewCarousel.querySelector('[data-review-current]');
+  let currentIndex = 0;
+  let autoplayTimer;
+
+  const showReview = (index) => {
+    currentIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === currentIndex;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+      slide.inert = !isActive;
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === currentIndex;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-current', String(isActive));
+    });
+
+    currentLabel.textContent = String(currentIndex + 1).padStart(2, '0');
+  };
+
+  const stopAutoplay = () => window.clearInterval(autoplayTimer);
+  const startAutoplay = () => {
+    if (
+      reduceMotion
+      || slides.length < 2
+      || document.hidden
+      || reviewCarousel.matches(':hover')
+      || reviewCarousel.matches(':focus-within')
+    ) return;
+    stopAutoplay();
+    autoplayTimer = window.setInterval(() => showReview(currentIndex + 1), 18000);
+  };
+  const changeReview = (index) => {
+    showReview(index);
+    startAutoplay();
+  };
+
+  previousButton?.addEventListener('click', () => changeReview(currentIndex - 1));
+  nextButton?.addEventListener('click', () => changeReview(currentIndex + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => changeReview(index)));
+
+  reviewCarousel.addEventListener('mouseenter', stopAutoplay);
+  reviewCarousel.addEventListener('mouseleave', startAutoplay);
+  reviewCarousel.addEventListener('focusin', stopAutoplay);
+  reviewCarousel.addEventListener('focusout', (event) => {
+    if (!reviewCarousel.contains(event.relatedTarget)) startAutoplay();
+  });
+  reviewCarousel.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') changeReview(currentIndex - 1);
+    if (event.key === 'ArrowRight') changeReview(currentIndex + 1);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  showReview(0);
+  startAutoplay();
+}
+
 if (!reduceMotion) {
   const animatedElements = document.querySelectorAll([
     '.reveal', '.section-heading', '.service-grid article', '.projects article',
-    '.timeline li', '.review-grid blockquote', '.knowledge-grid article', '.faq details',
+    '.timeline li', '.reviews-heading', '.review-viewport', '.knowledge-grid article', '.faq details',
     '.content-section', '.feature-cards article', '.service-detail', '.article-body > *',
     '.case-mockup-heading', '.device-composition', '.case-brief-columns article',
     '.case-step', '.tesora-brand-grid > *', '.innohub-system-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article',
