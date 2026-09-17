@@ -1,5 +1,5 @@
 const siteUrl = 'https://empat.studio';
-const defaultShareImage = `${siteUrl}/assets/auguste-at-work.jpg`;
+const defaultShareImage = `${siteUrl}/assets/social-share-auguste.jpg`;
 
 const escapeJson = (value) => value.replace(/</g, '\\u003c');
 const stripTags = (value) => value.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
@@ -103,6 +103,10 @@ export function renderPage(source, page) {
   const description = readTag(html, /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i) || page.description || 'empat.studio – svetainių kūrimo ir skaitmeninio marketingo studija.';
   const canonical = `${siteUrl}${page.route}`;
   const shareImage = page.shareImage ? `${siteUrl}${page.shareImage}` : defaultShareImage;
+  const shareImageType = shareImage.endsWith('.png') ? 'image/png' : shareImage.endsWith('.webp') ? 'image/webp' : 'image/jpeg';
+  const shareImageDimensions = page.shareImage ? '' : `
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">`;
   const ogType = page.article ? 'article' : 'website';
 
   page.toc?.forEach(({ heading, id }) => {
@@ -128,7 +132,7 @@ export function renderPage(source, page) {
     /\s*<meta property="og:description"[^>]*>/gi,
     /\s*<meta property="og:type"[^>]*>/gi,
     /\s*<meta property="og:url"[^>]*>/gi,
-    /\s*<meta property="og:image"[^>]*>/gi,
+    /\s*<meta property="og:image(?::[^"]+)?"[^>]*>/gi,
     /\s*<meta name="twitter:[^"]+"[^>]*>/gi,
     /\s*<link rel="canonical"[^>]*>/gi
   ];
@@ -148,12 +152,17 @@ export function renderPage(source, page) {
   <meta property="og:description" content="${description}">
   <meta property="og:type" content="${ogType}">
   <meta property="og:url" content="${canonical}">
+  <meta property="og:site_name" content="empat.studio">
+  <meta property="og:locale" content="lt_LT">
   <meta property="og:image" content="${shareImage}">
+  <meta property="og:image:secure_url" content="${shareImage}">
+  <meta property="og:image:type" content="${shareImageType}">${shareImageDimensions}
   <meta property="og:image:alt" content="empat.studio – ${page.label}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="${shareImage}">
+  <meta name="twitter:image:alt" content="empat.studio – ${page.label}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
