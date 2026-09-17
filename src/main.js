@@ -1,16 +1,34 @@
 const toggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('.desktop-nav');
+const header = document.querySelector('[data-header]');
 
-toggle?.addEventListener('click', () => {
-  const open = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!open));
-  nav?.classList.toggle('is-open', !open);
-});
+const setMenuOpen = (open, returnFocus = false) => {
+  if (!toggle || !nav) return;
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Uždaryti meniu' : 'Atverti meniu');
+  nav.classList.toggle('is-open', open);
+  document.body.classList.toggle('menu-open', open);
+  if (open) nav.querySelector('a')?.focus();
+  else if (returnFocus) toggle.focus();
+};
+
+toggle?.addEventListener('click', () => setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true'));
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  toggle?.setAttribute('aria-expanded', 'false');
-  nav.classList.remove('is-open');
+  setMenuOpen(false);
 }));
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') setMenuOpen(false, true);
+});
+
+document.addEventListener('click', (event) => {
+  if (toggle?.getAttribute('aria-expanded') === 'true' && header && !header.contains(event.target)) setMenuOpen(false);
+});
+
+window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  if (event.matches) setMenuOpen(false);
+});
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
