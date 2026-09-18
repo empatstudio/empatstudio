@@ -520,3 +520,59 @@
 @media(max-width:700px){.fanu-logo-stack>div{min-height:105px;padding:17px}.fanu-logo-stack img{max-height:70px}.fanu-palette{grid-template-columns:1fr 1fr}.fanu-color{min-height:130px}.fanu-preview-nav span{display:none}.fanu-site-preview{height:390px}.fanu-product-photo{height:300px}.portfolio-feature-media--contain{height:210px}}
 @media(max-width:600px){.projects-four{grid-template-columns:1fr}.fanu-palette{grid-template-columns:1fr}.fanu-actions{align-items:stretch}.fanu-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.fanu-product-photo img{transition:none}}
+
+/* Miško paslaptis branding and WordPress shop case study */
+.misko-case{--misko-deep:#101810;--misko-moss:#69734a;--misko-mist:#e7f0ec;--misko-gold:#b79a65;background:#f0f3ed}
+.misko-case :focus-visible{outline-color:var(--misko-gold)}
+.misko-case-hero{background:radial-gradient(circle at 9% 8%,#fff 0,transparent 31%),linear-gradient(128deg,#f6f1e8 28%,#dbe5d8)}
+.misko-case-hero h1 em{color:var(--misko-moss)}
+.misko-surface{background:linear-gradient(rgba(8,17,10,.28),rgba(8,17,10,.72)),url('/assets/projects/misko-paslaptis/forest-texture.webp') center/cover;color:#fff;border-radius:42% 42% 30px 30px}
+.misko-surface:before{border-color:rgba(183,154,101,.48)}
+.misko-case .case-brand-label{color:#d8c59e}
+.misko-surface img{width:min(76%,360px);max-height:220px;object-fit:contain;object-position:left center;filter:drop-shadow(0 8px 22px rgba(0,0,0,.24))}
+.misko-surface p{color:#e7eee5}
+.misko-glow{position:absolute;width:210px;height:210px;right:-40px;bottom:-54px;border-radius:50%;background:radial-gradient(circle,rgba(183,154,101,.55),transparent 68%);filter:blur(7px)}
+.misko-mockup-stage{background:radial-gradient(circle at 86% 12%,rgba(105,115,74,.42),transparent 28%),var(--misko-deep)}
+.misko-mockup-stage .case-mockup-heading h2 em{color:#d8c59e}
+.misko-mockup-stage .case-mockup-heading>p{max-width:430px;color:#ced8cc}
+.misko-device-stage{max-width:1180px;margin:0 auto;position:relative;padding:0 138px 78px 0}
+.misko-browser{border-color:#1d241d;box-shadow:0 38px 100px rgba(0,0,0,.42)}
+.misko-site-preview{height:clamp(430px,52vw,650px);position:relative;overflow:hidden;background:var(--misko-deep)}
+.misko-preview-photo{width:100%!important;height:100%!important;object-fit:cover;object-position:center}
+.misko-preview-overlay{position:absolute;inset:0;padding:clamp(30px,5vw,64px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;color:#fff;background:linear-gradient(90deg,rgba(5,13,7,.83),rgba(5,13,7,.16) 72%)}
+.misko-preview-overlay img{width:112px!important;height:70px!important;object-fit:contain;margin-bottom:clamp(30px,5vw,66px)}
+.misko-preview-overlay>span{font-size:.66rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+.misko-preview-overlay>strong{font-family:Georgia,serif;font-size:clamp(2rem,5vw,5.3rem);font-weight:400;font-style:italic;line-height:.94;margin:15px 0 24px;max-width:720px}
+.misko-preview-overlay>small{font-size:clamp(.7rem,1vw,.95rem);max-width:470px;color:#eef3ec}
+.misko-floating-products{position:absolute;right:0;bottom:0;width:250px;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:9px;background:#dfe9e3;border:7px solid #232923;border-radius:30px;box-shadow:0 28px 70px rgba(0,0,0,.45);transform:rotate(2deg)}
+.misko-floating-products img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:17px}
+.misko-case .case-process{background:radial-gradient(circle at 0 100%,rgba(183,154,101,.16),transparent 28%),var(--misko-deep)}
+.misko-case .case-process h2 em,.misko-case .case-step>span{color:#d8c59e}
+.misko-brand{background:var(--misko-mist)}
+.misko-brand-head{max-width:900px;margin-bottom:52px}
+.misko-brand-head h2{font-size:clamp(2.65rem,5vw,5.15rem);line-height:1;letter-spacing:-.055em;margin:12px 0 26px}
+.misko-brand-head h2 em{color:var(--misko-moss)}
+.misko-brand-head p{max-width:760px;color:#4f594f}
+.misko-brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.misko-logo-card,.misko-palette-card{min-height:410px;padding:clamp(28px,4vw,46px);border-radius:24px 24px 70px 24px;overflow:hidden}
+.misko-logo-card{display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:linear-gradient(rgba(8,17,10,.3),rgba(8,17,10,.72)),url('/assets/projects/misko-paslaptis/forest-texture.webp') center/cover}
+.misko-logo-card>span,.misko-palette-card>span{font-size:.69rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.misko-logo-card img{width:min(78%,390px);max-height:250px;object-fit:contain;object-position:left center}
+.misko-palette-card{background:#fff;display:flex;flex-direction:column;gap:28px}
+.misko-swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;flex:1}
+.misko-swatch{min-height:140px;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end}
+.misko-swatch strong{font-size:.76rem}.misko-swatch small{font-size:.66rem;margin-top:3px}
+.misko-deep{background:var(--misko-deep);color:#fff}.misko-moss{background:var(--misko-moss);color:#fff}.misko-mist{background:var(--misko-mist);color:var(--misko-deep);border:1px solid #cedbd0}.misko-gold{background:var(--misko-gold);color:var(--misko-deep)}
+.misko-gallery{background:#e3e7df}
+.misko-gallery .section-heading>p{color:#4f594f}
+.misko-gallery-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr;grid-template-rows:repeat(2,minmax(250px,360px));gap:12px}
+.misko-gallery-grid figure{margin:0;position:relative;overflow:hidden;border-radius:14px 14px 42px 14px;background:var(--misko-deep)}
+.misko-gallery-grid .misko-gallery-wide{grid-row:1/3}
+.misko-gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.misko-gallery-grid figure:hover img{transform:scale(1.025)}
+.misko-gallery-grid figcaption{position:absolute;left:14px;bottom:14px;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.9);font-size:.69rem;font-weight:700;color:var(--misko-deep);backdrop-filter:blur(8px)}
+.misko-final-cta{background:radial-gradient(circle at 84% 18%,rgba(183,154,101,.22),transparent 28%),var(--misko-deep)}
+.misko-final-cta .button{background:#d8c59e;border-color:#d8c59e;color:var(--misko-deep)}
+@media(max-width:900px){.misko-device-stage{padding-right:82px}.misko-brand-grid{grid-template-columns:1fr}.misko-gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:480px 300px 300px}.misko-gallery-grid .misko-gallery-wide{grid-column:1/-1;grid-row:auto}.misko-gallery-grid figure:last-child{grid-column:1/-1}}
+@media(max-width:600px){.misko-device-stage{padding:0 22px 92px 0}.misko-site-preview{height:430px}.misko-preview-overlay{padding:24px}.misko-preview-overlay img{margin-bottom:48px}.misko-preview-overlay>strong{font-size:2.5rem}.misko-floating-products{width:180px}.misko-logo-card,.misko-palette-card{min-height:330px}.misko-swatches{grid-template-columns:1fr}.misko-gallery-grid{display:grid;grid-template-columns:1fr;grid-template-rows:none}.misko-gallery-grid .misko-gallery-wide,.misko-gallery-grid figure:last-child{grid-column:auto}.misko-gallery-grid figure{height:320px}}
+@media(prefers-reduced-motion:reduce){.misko-gallery-grid img{transition:none}}
