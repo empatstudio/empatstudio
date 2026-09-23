@@ -106,27 +106,37 @@ if (reviewCarousel) {
 
 if (!reduceMotion) {
   const animatedElements = document.querySelectorAll([
-    '.reveal', '.section-heading', '.service-grid article', '.projects article',
-    '.timeline li', '.reviews-heading', '.review-viewport', '.knowledge-grid article', '.faq details',
-    '.content-section', '.feature-cards article', '.service-detail', '.article-body > *',
-    '.case-mockup-heading', '.device-composition', '.case-brief-columns article',
-    '.case-step', '.tesora-brand-grid > *', '.innohub-system-grid > *', '.case-gallery-grid > *', '.case-outcome-grid article',
-    '.marketing-grid article', '.marketing-flow li', '.dz-persona-grid article',
-    '.dz-identity-grid > *', '.dz-gallery-grid > *'
+    '.section-heading', '.service-grid', '.projects', '.about-visual', '.about-copy',
+    '.process-intro', '.timeline', '.reviews-heading', '.review-viewport', '.knowledge-grid', '.faq .accordion',
+    '.content-section', '.feature-cards', '.service-detail', '.article-body',
+    '.case-mockup-heading', '.device-composition', '.case-brief-columns',
+    '.case-process-list', '.tesora-brand-grid', '.innohub-system-grid', '.case-gallery-grid', '.case-outcome-grid',
+    '.marketing-grid', '.marketing-flow', '.dz-persona-grid',
+    '.dz-identity-grid', '.dz-gallery-grid', '.hosting-offer-copy', '.hosting-offer-visual'
   ].join(','));
 
   animatedElements.forEach((element, index) => {
     element.classList.add('reveal');
-    element.style.setProperty('--reveal-delay', `${(index % 3) * 70}ms`);
+    element.style.setProperty('--reveal-delay', `${(index % 2) * 35}ms`);
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.01, rootMargin: '0px 0px 12% 0px' });
 
-  animatedElements.forEach((element) => observer.observe(element));
+    animatedElements.forEach((element) => {
+      if (element.getBoundingClientRect().top < window.innerHeight * 1.08) {
+        element.classList.add('is-visible');
+        return;
+      }
+      observer.observe(element);
+    });
+  } else {
+    animatedElements.forEach((element) => element.classList.add('is-visible'));
+  }
 }
