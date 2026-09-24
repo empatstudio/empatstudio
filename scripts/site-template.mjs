@@ -29,7 +29,6 @@ const header = (route) => {
       ${navLink('/marketingo-paslaugos/', 'Marketingas', 'marketing', active)}
       ${navLink('/darbai/', 'Darbai', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
-      ${navLink('/zinios/', 'Naudingi patarimai', 'knowledge', active)}
       <a class="mobile-nav-cta" href="${contactHref}">Aptarkime projektą</a>
     </nav>
     <a class="button button-small header-cta" href="${contactHref}">Nemokamas pokalbis</a>
@@ -49,6 +48,10 @@ const footer = (route) => {
       ${navLink('/zinios/', 'Naudingi patarimai', 'knowledge', active)}
       <a href="/privatumo-politika/">Privatumas</a>
     </nav>
+    <address class="footer-contact" aria-label="Kontaktai">
+      <a href="mailto:info.empatstudio@gmail.com">info.empatstudio@gmail.com</a>
+      <a href="tel:+37060824275">+370 608 24275</a>
+    </address>
     <small>© 2026 empat.studio</small>
   </footer>`;
 };
