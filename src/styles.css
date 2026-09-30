@@ -681,3 +681,52 @@
 .site-footer>small{grid-area:copyright;margin:18px 0 0;color:#aeb5ae}
 @media(max-width:900px){.site-footer{grid-template-columns:1fr 1fr;grid-template-areas:"brand contact" "nav nav" "copyright copyright"}.site-footer>nav{width:auto;order:initial;justify-content:flex-start}.footer-contact{justify-self:end}}
 @media(max-width:600px){.hero-art{min-height:430px}.portrait-orb{inset:3% 0 0;border-radius:16% 16% 8% 12%}.site-footer{grid-template-columns:1fr;grid-template-areas:"brand" "contact" "nav" "copyright";gap:22px}.site-footer>nav{display:flex;gap:16px}.footer-contact{justify-self:start;text-align:left}.site-footer>small{margin-top:0}}
+
+/* Collection links stay beside headings on desktop and follow the cards on mobile. */
+.section-more-mobile{display:none}
+@media(max-width:900px){
+  .section-more-desktop{display:none}
+  .section-more-mobile{display:inline-flex;margin-top:24px}
+  .section-heading{gap:18px;margin-bottom:34px}
+  .section-heading>div{max-width:none}
+  .section-heading h2{margin-bottom:0}
+  .section-heading>p{margin:0}
+}
+
+/* Compact vertical rhythm on phone-sized screens across shared page templates. */
+@media(max-width:600px){
+  .section{padding-top:56px;padding-bottom:56px}
+  .section-heading{gap:14px;margin-bottom:28px}
+  .section-heading h2{margin:8px 0 0}
+  .about-copy h2,.process h2,.reviews h2,.faq h2,.contact h2{margin:10px 0 20px}
+  .about{gap:26px}.portrait-placeholder{height:370px}
+  .value-pills{margin-bottom:20px}.founder-story p+p{margin-top:12px}
+  .service-grid article{min-height:240px;padding:23px}
+  .service-grid h2,.service-grid h3{margin:26px 0 12px}
+  .projects{gap:14px}.projects article{padding:10px}.project-cover{height:220px}.project-card-copy{padding:18px 6px}
+  .knowledge-grid article{min-height:0;padding:24px}.knowledge-grid h3{margin:18px 0 12px}
+  .process{gap:28px}.timeline li{padding-bottom:24px}
+  .reviews-heading{gap:18px;margin-bottom:24px}.review-slide{padding:24px}.review-person{margin-top:24px;padding-top:18px}.review-footer-row{margin-top:20px}
+  .faq{gap:20px}.accordion details{padding:15px 0}
+  .hosting-offer{gap:24px}.contact{padding-top:56px;padding-bottom:60px;gap:28px}
+  .subhero{padding-top:118px;padding-bottom:58px}.subhero h1{margin-bottom:20px}.breadcrumb{margin-bottom:22px}
+  .content-section{padding-top:56px;padding-bottom:56px;gap:24px}
+  .feature-cards{padding-bottom:56px;gap:12px}.feature-cards article{min-height:0;padding:24px}
+  .subcta{padding-top:52px;padding-bottom:52px;gap:20px}
+  .portfolio-list{gap:50px}.portfolio-feature,.portfolio-feature.reverse{gap:20px}.portfolio-feature h2{margin:10px 0 16px}.project-facts{margin:18px 0}
+  .chooser-grid article,.service-path-grid article,.marketing-grid article{padding:24px}
+  .service-path{gap:24px}.marketing-grid h3{margin-top:24px}
+  .article-layout{padding-top:50px;padding-bottom:60px;gap:24px}
+  .article-body h2{margin:42px 0 16px}.article-body h3{margin:28px 0 10px}
+  .article-note{margin:24px 0}.inline-cta{margin:32px 0;padding:26px}.legal-content h2{margin-top:38px}
+  .case-hero{padding-top:112px;padding-bottom:50px;gap:30px}
+  .case-mockup-stage{padding-top:56px;padding-bottom:70px}.case-mockup-heading{margin-bottom:28px}
+  .case-brief,.case-process,.case-outcomes{gap:26px}.case-brief-columns{margin-top:30px;gap:10px}
+  .case-brief-columns article>span,.case-outcome-grid article>span{margin-bottom:18px}
+  .case-step{padding:20px 0 24px}.case-outcome-grid article{min-height:0;padding:24px}
+}
+@media(max-width:360px){
+  main h1,main h2,main h3{overflow-wrap:anywhere}
+  .subhero h1{font-size:2.2rem}
+  .content-section h2,.service-detail h2{font-size:2rem}
+}
