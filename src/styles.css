@@ -731,3 +731,22 @@
   .subhero h1{font-size:2.2rem}
   .content-section h2,.service-detail h2{font-size:2rem}
 }
+
+/* Website offers use the established forest, sand and neutral palette. */
+.pricing-section{background:var(--paper)}
+.pricing-heading{max-width:760px;margin-bottom:36px}
+.pricing-heading h2{font-size:clamp(2.6rem,5vw,5.3rem);line-height:1;letter-spacing:-.055em;margin:12px 0 22px}
+.pricing-heading h2 em{color:var(--forest)}
+.pricing-heading>p{max-width:62ch}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pricing-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;padding:30px;background:#fff;border:1px solid rgba(67,79,63,.2);border-radius:30px}
+.pricing-card h3{font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.2;margin:22px 0 14px}
+.pricing-card>p:not(.pricing-price){font-size:.92rem}
+.pricing-price{margin:auto 0 22px;padding-top:28px;font-size:clamp(2.3rem,3vw,3.2rem);font-weight:700;line-height:1;color:var(--forest);white-space:nowrap}
+.pricing-price span{font-size:.9rem;font-weight:500}
+.pricing-card .button-outline:hover{color:#fff}
+.pricing-note{max-width:80ch;margin:24px 0 0;font-size:.88rem}
+.pricing-note a{color:var(--forest);font-weight:600}
+.pricing-section,.pricing-card{scroll-margin-top:24px}
+@media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.pricing-heading{margin-bottom:24px}.pricing-heading h2{font-size:2.65rem}.pricing-grid{grid-template-columns:1fr;gap:12px}.pricing-card{padding:24px}.pricing-card h3{margin:18px 0 12px}.pricing-price{padding-top:20px}.pricing-note{margin-top:20px}}
