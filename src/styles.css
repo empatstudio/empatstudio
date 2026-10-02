@@ -674,6 +674,37 @@
 .skausmo-logo-surface .case-brand-label{color:var(--forest);top:64px;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:.1em}
 .skausmo-logo-surface img{width:100%;max-width:420px}
 .skausmo-case .case-mockup-heading>p{max-width:420px;color:#dfe4dd;margin:0}
+/* Geras odontologas case study: client artwork sits inside the approved empat.studio palette. */
+.geras-case .case-hero h1{font-size:clamp(3rem,5.6vw,5.5rem);overflow-wrap:anywhere}
+.geras-logo-surface{background:#fff;color:var(--ink);align-items:center;text-align:center}
+.geras-logo-surface:before{border-color:rgba(67,79,63,.2)}
+.geras-logo-surface .case-brand-label{color:var(--forest);top:58px;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:.1em}
+.geras-logo-surface img{width:min(100%,360px)}
+.geras-logo-surface p{margin-top:30px}
+.geras-visual-stage .case-mockup-heading>p{max-width:430px;margin:0;color:#dfe4dd}
+.geras-clinic-visual{margin:0;overflow:hidden;border-radius:32px 32px 8px 8px;background:var(--forest)}
+.geras-clinic-visual img{display:block;width:100%;height:auto}
+.geras-clinic-visual figcaption{padding:12px 20px;color:#fff;font-size:.76rem}
+.geras-clinic-visual figcaption a{color:#fff;text-underline-offset:3px}
+.geras-journey{background:var(--sand)}
+.geras-journey .section-heading>p{max-width:390px}
+.geras-journey-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;list-style:none;padding:0;margin:0}
+.geras-journey-list li{background:#fff;border-radius:28px 8px 28px 8px;padding:28px;min-height:200px}
+.geras-journey-list li>span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--forest);margin-bottom:44px}
+.geras-journey-list strong{display:block;font-size:1.2rem;line-height:1.2}
+.geras-journey-list p{font-size:.82rem;margin:10px 0 0}
+.geras-feedback{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(40px,7vw,110px);background:var(--forest);color:#fff}
+.geras-feedback h2{font-size:clamp(2.5rem,4vw,4.4rem);line-height:1.05;letter-spacing:-.05em;margin:16px 0 0}
+.geras-feedback h2 em{color:var(--sand)}
+.geras-feedback blockquote{margin:0;border-left:2px solid var(--sand);padding:12px 0 12px 36px}
+.geras-feedback blockquote p{font-size:clamp(1.3rem,2.2vw,2rem);line-height:1.5;margin:0 0 28px}
+.geras-feedback blockquote footer{font-size:.82rem;color:#fff}
+.portfolio-feature-media--geras{position:relative}
+.portfolio-feature-media--geras>img{object-position:63% center}
+.geras-cover-logo{position:absolute;left:5%;bottom:7%;display:block;background:#fff;border-radius:14px;padding:15px 20px;box-shadow:0 12px 34px rgba(29,29,27,.22)}
+.portfolio-feature-media--geras .geras-cover-logo img{display:block;width:clamp(155px,15vw,235px);height:auto;aspect-ratio:auto;object-fit:contain}
+@media(max-width:900px){.geras-feedback{grid-template-columns:1fr;gap:28px}.geras-journey-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.geras-case .case-hero h1{font-size:clamp(2.7rem,10.5vw,3.8rem)}.geras-logo-surface .case-brand-label{top:38px}.geras-journey-list{grid-template-columns:1fr}.geras-journey-list li{min-height:0;padding:24px}.geras-journey-list li>span{margin-bottom:24px}.geras-feedback blockquote{padding-left:22px}.geras-cover-logo{padding:10px 13px}.portfolio-feature-media--geras .geras-cover-logo img{width:155px}}
 .site-footer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand nav contact" "copyright copyright copyright";align-items:center}
 .site-footer>.brand{grid-area:brand;margin:0}
 .site-footer>nav{grid-area:nav;justify-content:center;width:auto;order:initial}
