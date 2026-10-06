@@ -17,6 +17,7 @@ const reviews = {
 const pages = [
   { source: 'index.html', target: 'index.html', route: '/', label: 'Pradžia' },
   { source: 'apie.html', target: 'apie/index.html', route: '/apie/', label: 'Apie' },
+  { source: 'kontaktai.html', target: 'kontaktai/index.html', route: '/kontaktai/', label: 'Kontaktai' },
   { source: 'paslaugos.html', target: 'paslaugos/index.html', route: '/paslaugos/', label: 'Paslaugos' },
   { source: 'svetainiu-kurimas.html', target: 'svetainiu-kurimas/index.html', route: '/svetainiu-kurimas/', label: 'Svetainių kūrimas', parent: serviceParent, proof: { ...reviews.agnesa, related: { href: '/darbai/vejos-robotai/', label: 'Susijęs projektas: Vejos Robotai' } } },
   { source: 'web-dizainas.html', target: 'web-dizainas/index.html', route: '/web-dizainas/', label: 'Web dizainas', parent: serviceParent, proof: { ...reviews.vaida, related: { href: '/darbai/geras-odontologas/', label: 'Susijęs projektas: Geras odontologas' } } },

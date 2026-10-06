@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontaktai – aptarkime tavo projektą | empat.studio</title>
+  <meta name="description" content="Susisiek su empat.studio dėl svetainės, UX/UI dizaino, brandingo, SEO ar marketingo. Parašyk užklausą, paskambink arba atsiųsk el. laišką.">
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body class="subpage contact-page">
+  <header class="site-header"></header>
+  <main>
+    <section class="subhero contact-page-hero">
+      <div class="breadcrumb"><a href="/">Pradžia</a> / Kontaktai</div>
+      <span class="eyebrow">Kontaktai</span>
+      <h1>Pradėkime nuo <em>pokalbio.</em></h1>
+      <p>Papasakok, ką norėtum sukurti ar pakeisti. Išklausysime, užduosime tinkamus klausimus ir kartu rasime geriausią pirmą žingsnį.</p>
+    </section>
+
+    <section class="contact-page-section section" aria-labelledby="contact-form-title">
+      <div class="contact-page-info">
+        <span class="eyebrow light">Susisiekime</span>
+        <h2 id="contact-form-title">Tavo idėja – <em>mūsų pokalbio pradžia.</em></h2>
+        <p>Gali užpildyti formą arba parašyti tiesiogiai. Nesvarbu, ar jau turi aiškų planą, ar tik jauti, kad verslui reikia pokyčio.</p>
+        <address class="contact-page-direct">
+          <a href="mailto:info.empatstudio@gmail.com"><span>El. paštas</span>info.empatstudio@gmail.com <span aria-hidden="true">↗</span></a>
+          <a href="tel:+37060824275"><span>Telefonas</span>+370 608 24275 <span aria-hidden="true">↗</span></a>
+        </address>
+        <p class="contact-page-response">Į užklausas paprastai atsakome per 1–2 darbo dienas.</p>
+      </div>
+
+      <form class="contact-form" id="kontaktine-forma" action="https://formsubmit.co/info.empatstudio@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://empat.studio/aciu/">
+        <input type="hidden" name="_subject" value="Nauja užklausa iš empat.studio kontaktų puslapio">
+        <input type="hidden" name="_template" value="table">
+        <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <div class="form-grid">
+          <label>Vardas<input type="text" name="vardas" autocomplete="name" required></label>
+          <label>El. paštas<input type="email" name="email" autocomplete="email" required></label>
+        </div>
+        <div class="form-grid">
+          <label>Telefonas <span>(nebūtina)</span><input type="tel" name="telefonas" autocomplete="tel"></label>
+          <label>Ko reikia?<select name="paslauga" required><option value="">Pasirink</option><option>Svetainės arba UX/UI dizaino</option><option>Brandingo</option><option>SEO arba svetainės audito</option><option>Marketingo strategijos</option><option>Google arba Meta reklamos</option><option>Reels arba turinio</option><option>Lead generation</option><option>Procesų automatizavimo</option><option>Dar nežinau</option></select></label>
+        </div>
+        <label>Trumpai apie situaciją<textarea name="zinute" rows="5" placeholder="Ką norėtum pakeisti, pasiekti arba paleisti?" required></textarea></label>
+        <label class="form-consent"><input type="checkbox" name="privatumas" value="sutinku" required><span>Susipažinau su <a href="/privatumo-politika/">privatumo politika</a> ir sutinku, kad su manimi būtų susisiekta dėl užklausos.</span></label>
+        <button class="button" type="submit">Siųsti užklausą</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+</body>
+</html>

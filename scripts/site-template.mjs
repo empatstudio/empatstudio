@@ -13,6 +13,7 @@ const activeSection = (route) => {
   if (route === '/marketingo-paslaugos/' || ['/marketingo-strategija/', '/google-ads/', '/meta-reklama/', '/reels-kurimas/', '/lead-generation/'].includes(route)) return 'marketing';
   if (route.startsWith('/darbai/')) return 'work';
   if (route === '/apie/') return 'about';
+  if (route === '/kontaktai/') return 'contact';
   if (route.startsWith('/zinios/')) return 'knowledge';
   return '';
 };
@@ -21,7 +22,7 @@ const navLink = (href, label, key, active) => `<a href="${href}"${key === active
 
 const header = (route) => {
   const active = activeSection(route);
-  const contactHref = route === '/' ? '#kontaktai' : '/#kontaktai';
+  const contactHref = route === '/' ? '#kontaktai' : route === '/kontaktai/' ? '#kontaktine-forma' : '/kontaktai/';
   return `<header class="site-header" data-header>
     <a class="brand" href="/" aria-label="empat.studio pradžia"><img src="/assets/logo-dark.svg" alt="empat.studio" width="150" height="50"></a>
     <nav class="desktop-nav" id="primary-navigation" aria-label="Pagrindinė navigacija">
@@ -46,6 +47,7 @@ const footer = (route) => {
       ${navLink('/darbai/', 'Portfolio', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
       ${navLink('/zinios/', 'Naudingi patarimai', 'knowledge', active)}
+      ${navLink('/kontaktai/', 'Kontaktai', 'contact', active)}
       <a href="/privatumo-politika/">Privatumas</a>
     </nav>
     <address class="footer-contact" aria-label="Kontaktai">
@@ -126,6 +128,7 @@ export function renderPage(source, page) {
   html = html.replace(/<a class="skip-link"[\s\S]*?<\/a>\s*/i, '');
   html = html.replace(/<header class="site-header"[\s\S]*?<\/header>/i, header(page.route));
   html = html.replace(/<footer class="site-footer"[\s\S]*?<\/footer>/i, footer(page.route));
+  if (page.route !== '/') html = html.replaceAll('href="/#kontaktai"', 'href="/kontaktai/"');
   html = html.replace(/<main(?![^>]*\bid=)[^>]*>/i, (match) => match.replace('<main', '<main id="content"'));
   html = html.replace(/<body([^>]*)>/i, `<body$1>\n  <a class="skip-link" href="#content">Pereiti prie turinio</a>`);
   html = html.replace(/\s*<script type="module" src="\/src\/main\.js"><\/script>/gi, '');
