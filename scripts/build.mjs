@@ -6,7 +6,7 @@ const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, 'dist');
 const serviceParent = { name: 'Paslaugos', route: '/paslaugos/' };
 const marketingParent = { name: 'Marketingo paslaugos', route: '/marketingo-paslaugos/' };
-const workParent = { name: 'Darbai', route: '/darbai/' };
+const workParent = { name: 'Portfolio', route: '/darbai/' };
 const knowledgeParent = { name: 'Naudingi patarimai', route: '/zinios/' };
 const reviews = {
   agnesa: { author: 'Agnesa Seriogina', company: 'buklaukine.lt', quote: 'Augustė ne tik klausėsi, bet ir išgirdo. Suprato visus mano norus ir sukūrė nuostabų, elegantišką puslapį.' },
@@ -30,7 +30,7 @@ const pages = [
   { source: 'meta-reklama.html', target: 'meta-reklama/index.html', route: '/meta-reklama/', label: 'Facebook ir Instagram reklama', parent: marketingParent, proof: reviews.mytravis },
   { source: 'reels-kurimas.html', target: 'reels-kurimas/index.html', route: '/reels-kurimas/', label: 'Reels kūrimas', parent: marketingParent, proof: reviews.mytravis },
   { source: 'lead-generation.html', target: 'lead-generation/index.html', route: '/lead-generation/', label: 'Lead generation', parent: marketingParent, proof: reviews.mytravis },
-  { source: 'darbai.html', target: 'darbai/index.html', route: '/darbai/', label: 'Darbai' },
+  { source: 'darbai.html', target: 'darbai/index.html', route: '/darbai/', label: 'Portfolio' },
   { source: 'vejos-robotai.html', target: 'darbai/vejos-robotai/index.html', route: '/darbai/vejos-robotai/', label: 'Vejos Robotai', parent: workParent, shareImage: '/assets/projects/vejos-robotai/website-desktop.jpg' },
   { source: 'innohub-lithuania.html', target: 'darbai/innohub-lithuania/index.html', route: '/darbai/innohub-lithuania/', label: 'InnoHub Lithuania', parent: workParent, shareImage: '/assets/projects/innohub-lithuania/website-desktop.jpg' },
   { source: 'dainius-zalimas.html', target: 'darbai/dainius-zalimas/index.html', route: '/darbai/dainius-zalimas/', label: 'Dainius Žalimas', parent: workParent, shareImage: '/assets/projects/dainius-zalimas/website-desktop.jpg' },

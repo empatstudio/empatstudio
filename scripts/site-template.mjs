@@ -27,7 +27,7 @@ const header = (route) => {
     <nav class="desktop-nav" id="primary-navigation" aria-label="Pagrindinė navigacija">
       ${navLink('/paslaugos/', 'Paslaugos', 'services', active)}
       ${navLink('/marketingo-paslaugos/', 'Marketingas', 'marketing', active)}
-      ${navLink('/darbai/', 'Darbai', 'work', active)}
+      ${navLink('/darbai/', 'Portfolio', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
       <a class="mobile-nav-cta" href="${contactHref}">Aptarkime projektą</a>
     </nav>
@@ -43,7 +43,7 @@ const footer = (route) => {
     <nav aria-label="Apatinė navigacija">
       ${navLink('/paslaugos/', 'Paslaugos', 'services', active)}
       ${navLink('/marketingo-paslaugos/', 'Marketingas', 'marketing', active)}
-      ${navLink('/darbai/', 'Darbai', 'work', active)}
+      ${navLink('/darbai/', 'Portfolio', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
       ${navLink('/zinios/', 'Naudingi patarimai', 'knowledge', active)}
       <a href="/privatumo-politika/">Privatumas</a>

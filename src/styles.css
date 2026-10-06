@@ -781,3 +781,41 @@
 .pricing-section,.pricing-card{scroll-margin-top:24px}
 @media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.pricing-heading{margin-bottom:24px}.pricing-heading h2{font-size:2.65rem}.pricing-grid{grid-template-columns:1fr;gap:12px}.pricing-card{padding:24px}.pricing-card h3{margin:18px 0 12px}.pricing-price{padding-top:20px}.pricing-note{margin-top:20px}}
+
+/* Portfolio index: compact introduction, type filters and scannable case cards. */
+.work-index-hero{padding-top:132px;padding-bottom:58px}
+.work-index-hero .breadcrumb{margin-bottom:20px}
+.work-index-hero h1{max-width:850px;font-size:clamp(2.8rem,5vw,5.1rem);line-height:1.04;margin:13px 0 22px}
+.work-index-hero p{max-width:850px;margin:0;font-size:clamp(1rem,1.4vw,1.13rem)}
+.portfolio-index.section{padding-top:48px;padding-bottom:95px}
+.portfolio-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.portfolio-filter{min-height:44px;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--forest);border-radius:999px;padding:10px 17px;background:transparent;color:var(--forest);font:inherit;font-size:.86rem;font-weight:600;line-height:1.25;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease}
+.portfolio-filter:hover{transform:translateY(-2px)}
+.portfolio-filter[aria-pressed="true"]{background:var(--forest);color:var(--white)}
+.portfolio-filter span{font-size:.72rem;opacity:.85}
+.portfolio-filter:focus-visible,.portfolio-card-link:focus-visible{outline:3px solid var(--forest);outline-offset:4px}
+.portfolio-results{margin:0 0 24px;color:var(--forest);font-size:.82rem;font-weight:600}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.portfolio-card{min-width:0;background:var(--white);border:1px solid rgba(67,79,63,.13);border-radius:18px 18px 38px 18px;overflow:hidden;box-shadow:0 14px 38px rgba(29,29,27,.07)}
+.portfolio-card[hidden]{display:none}
+.portfolio-card-link{display:flex;flex-direction:column;height:100%;color:var(--ink);text-decoration:none}
+.portfolio-card-media{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:var(--paper)}
+.portfolio-card-media>img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.portfolio-card-link:hover .portfolio-card-media>img{transform:scale(1.025)}
+.portfolio-card-media--contain{padding:20px;background:var(--white)}
+.portfolio-card-media--contain>img{object-fit:contain}
+.portfolio-card-media--geras>img{object-position:63% center}
+.portfolio-card-media--geras .geras-cover-logo{left:5%;bottom:6%;padding:10px 14px}
+.portfolio-card-media--geras .geras-cover-logo img{width:clamp(120px,13vw,190px);height:auto;object-fit:contain}
+.portfolio-card-media--beauty13>img{object-position:center}
+.portfolio-card-copy{display:flex;flex-direction:column;flex:1;align-items:flex-start;padding:26px 28px 28px}
+.portfolio-card-type{color:var(--forest);font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.portfolio-card h2{font-size:clamp(1.5rem,2.5vw,2.15rem);line-height:1.15;letter-spacing:-.04em;margin:10px 0 13px}
+.portfolio-card p{font-size:.92rem;line-height:1.55;margin:0 0 16px}
+.portfolio-card-services{color:var(--forest);font-size:.77rem;font-weight:600;line-height:1.5;margin-bottom:25px}
+.portfolio-card-cta{margin-top:auto;font-size:.85rem;font-weight:700}
+.portfolio-card-cta span{display:inline-block;transition:transform .2s ease}
+.portfolio-card-link:hover .portfolio-card-cta span{transform:translate(2px,-2px)}
+@media(max-width:760px){.portfolio-grid{grid-template-columns:1fr;gap:17px}.portfolio-index.section{padding-top:36px;padding-bottom:70px}}
+@media(max-width:600px){.work-index-hero{padding-top:112px;padding-bottom:42px}.work-index-hero .breadcrumb{margin-bottom:18px}.work-index-hero h1{font-size:clamp(2.4rem,10vw,3.2rem);margin:11px 0 17px}.work-index-hero p{font-size:1rem}.portfolio-filters{gap:8px}.portfolio-filter{font-size:.76rem;padding:9px 13px}.portfolio-results{margin-bottom:18px}.portfolio-card-copy{padding:21px 22px 24px}.portfolio-card-media--contain{padding:14px}}
+@media(prefers-reduced-motion:reduce){.portfolio-filter,.portfolio-card-media>img,.portfolio-card-cta span{transition:none}.portfolio-filter:hover,.portfolio-card-link:hover .portfolio-card-media>img,.portfolio-card-link:hover .portfolio-card-cta span{transform:none}}

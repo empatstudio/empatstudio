@@ -32,6 +32,29 @@ window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const portfolioFilters = document.querySelector('[data-portfolio-filters]');
+
+if (portfolioFilters) {
+  const buttons = [...portfolioFilters.querySelectorAll('[data-portfolio-filter]')];
+  const cards = [...document.querySelectorAll('[data-portfolio-category]')];
+  const results = document.querySelector('[data-portfolio-results]');
+
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    const category = button.dataset.portfolioFilter;
+    let visibleCount = 0;
+
+    buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    cards.forEach((card) => {
+      card.hidden = category !== 'all' && card.dataset.portfolioCategory !== category;
+      if (!card.hidden) visibleCount += 1;
+    });
+
+    if (results) results.textContent = visibleCount === 1
+      ? 'Rodomas 1 projektas'
+      : `Rodomi ${visibleCount} projektai`;
+  }));
+}
+
 const reviewCarousel = document.querySelector('[data-review-carousel]');
 
 if (reviewCarousel) {
