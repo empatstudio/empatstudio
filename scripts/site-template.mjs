@@ -1,5 +1,11 @@
 const siteUrl = 'https://empat.studio';
 const defaultShareImage = `${siteUrl}/assets/social-share-auguste.jpg`;
+// A GA4 measurement ID is public; the env override is useful for temporary previews.
+const ga4Id = process.env.GA4_MEASUREMENT_ID?.trim() ?? 'G-5NH732S938';
+
+if (ga4Id && !/^G-[A-Z0-9]+$/.test(ga4Id)) {
+  throw new Error('GA4_MEASUREMENT_ID must be a valid G- measurement ID.');
+}
 
 const escapeJson = (value) => value.replace(/</g, '\\u003c');
 const stripTags = (value) => value.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
@@ -49,6 +55,7 @@ const footer = (route) => {
       ${navLink('/zinios/', 'Naudingi patarimai', 'knowledge', active)}
       ${navLink('/kontaktai/', 'Kontaktai', 'contact', active)}
       <a href="/privatumo-politika/">Privatumas</a>
+      ${ga4Id ? '<button class="analytics-settings" type="button" data-analytics-settings>Analitikos nustatymai</button>' : ''}
     </nav>
     <address class="footer-contact" aria-label="Kontaktai">
       <a href="mailto:info.empatstudio@gmail.com">info.empatstudio@gmail.com</a>
@@ -173,8 +180,21 @@ export function renderPage(source, page) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  ${ga4Id ? `<meta name="ga4-measurement-id" content="${ga4Id}">` : ''}
   ${jsonLd}`;
   html = html.replace('</head>', `${socialMeta}\n</head>`);
-  html = html.replace('</body>', '  <script type="module" src="/src/main.js"></script>\n</body>');
+  const analyticsUi = ga4Id ? `
+  <aside class="analytics-consent" data-analytics-consent aria-labelledby="analytics-consent-title" hidden>
+    <div>
+      <h2 id="analytics-consent-title">Ar galiu matuoti svetainės lankomumą?</h2>
+      <p>Naudojame „Google Analytics 4“, kad suprastume, kurie puslapiai tau naudingi. Analitika įsijungs tik tau sutikus. <a href="/privatumo-politika/">Daugiau apie privatumą</a>.</p>
+    </div>
+    <div class="analytics-consent-actions">
+      <button class="button" type="button" data-analytics-accept>Leisti analitiką</button>
+      <button class="button button-outline" type="button" data-analytics-decline>Neleisti</button>
+    </div>
+  </aside>
+  <script type="module" src="/src/analytics.js"></script>` : '';
+  html = html.replace('</body>', `  <script type="module" src="/src/main.js"></script>${analyticsUi}\n</body>`);
   return html;
 }

@@ -52,12 +52,12 @@ const pages = [
 
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
-await Promise.all(pages.map(async (page) => {
+for (const page of pages) {
   const destination = resolve(out, page.target);
   await mkdir(resolve(destination, '..'), { recursive: true });
   const source = await readFile(resolve(root, page.source), 'utf8');
   await writeFile(destination, renderPage(source, page));
-}));
+}
 await cp(resolve(root, 'src'), resolve(out, 'src'), { recursive: true });
 await cp(resolve(root, 'public'), out, { recursive: true });
 console.log(`Built ${pages.length} pages into ${out}`);
