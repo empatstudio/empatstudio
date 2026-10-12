@@ -51,7 +51,7 @@
 .case-hero-brand:before{content:"";position:absolute;width:320px;height:320px;border:1px solid rgba(252,217,26,.28);border-radius:50%;right:-105px;top:-115px;z-index:-1}
 .case-hero-brand img{width:min(100%,460px);height:auto;position:relative;z-index:2}
 .case-hero-brand p{max-width:310px;margin:34px 0 0;font-size:.95rem;position:relative;z-index:2}
-.case-brand-label{position:absolute;top:39px;left:48px;color:var(--tesora-sun);text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;font-weight:700}
+.case-brand-label{position:absolute;top:50px;left:50%;transform:translateX(-50%);width:60%;text-align:center;line-height:1.4;overflow-wrap:anywhere;color:var(--tesora-sun);text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;font-weight:700}
 .tesora-orbit{position:absolute;width:250px;height:120px;border:2px solid var(--tesora-sun);border-radius:50%;right:-82px;bottom:-34px;transform:rotate(-20deg);opacity:.65}
 .case-mockup-stage{padding:95px max(24px,calc((100vw - var(--max))/2)) 150px;background:#111812;color:#fff;overflow:hidden}
 .case-mockup-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:52px}
@@ -109,11 +109,14 @@
 .tesora-quote-card p{font-size:clamp(1.55rem,3.2vw,3.3rem);font-weight:700;line-height:1.08;max-width:960px;margin:0;text-transform:uppercase}
 .case-gallery{background:#e6dfd4}
 .case-gallery .section-heading>p{color:#545a53}
-.case-gallery-grid{display:grid;grid-template-columns:1.5fr .5fr;gap:18px;align-items:stretch}
+.case-gallery-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(320px,.6fr);gap:18px;align-items:stretch}
+.case-gallery-grid>*{min-width:0}
 .case-gallery-wide{box-shadow:0 20px 55px rgba(29,29,27,.14)}
 .browser-mockup figcaption{padding:14px 18px;background:#fff;color:#4c504b;font-size:.78rem}
-.case-gallery-note{background:#434f3f;color:#fff;border-radius:28px;padding:clamp(30px,4vw,50px);overflow:hidden;position:relative;min-height:590px;display:flex;flex-direction:column}
-.case-gallery-note h3{font-size:clamp(1.7rem,3vw,3rem);line-height:1.08;margin:22px 0}
+.case-gallery-note{background:#434f3f;color:#fff;border-radius:28px;padding:clamp(24px,2.5vw,36px);overflow:hidden;position:relative;min-width:0;min-height:590px;display:flex;flex-direction:column;container-type:inline-size}
+/* Size narrow-card headings from their content width, not the viewport. */
+.case-gallery-note h3{font-size:1.75rem;font-size:clamp(1.65rem,9cqi,2.25rem);line-height:1.15;margin:22px 0;overflow-wrap:anywhere}
+.case-study :where(h1,h2,h3,p,a,li,figcaption){overflow-wrap:anywhere}
 .case-gallery-note>p{color:#dfe4dd}
 .mini-phone{width:78%;margin:auto auto -58% 11%;padding:8px;background:#111;border-radius:30px;box-shadow:0 24px 50px rgba(0,0,0,.3)}
 .case-outcomes{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(50px,8vw,120px)}
@@ -136,6 +139,23 @@
 .project-card-link .project-cover{display:block;overflow:hidden}
 .project-card-link .project-cover img{width:100%;height:100%;object-fit:cover}
 .project-card-copy{padding:22px 10px}
+
+/* Luminary Well: client visuals framed by the established studio palette. */
+.luminary-logo-surface{background:var(--white);color:var(--ink);align-items:center;text-align:center}
+.luminary-logo-surface:before{border-color:rgba(67,79,63,.2)}
+.luminary-logo-surface .case-brand-label{color:var(--forest)}
+.luminary-logo-surface img{width:min(100%,340px)}
+.luminary-structure{background:var(--sand)}
+.luminary-structure .section-heading>p{color:var(--forest)}
+.luminary-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.luminary-path li{background:var(--white);padding:28px;border-radius:28px 8px 28px 8px}
+.luminary-path li>span{display:block;color:var(--forest);font-size:.75rem;font-weight:700;margin-bottom:28px}
+.luminary-path h3{font-size:1.2rem;margin-bottom:12px}
+.luminary-path p{font-size:.9rem;margin-bottom:0}
+.luminary-photo-card{margin:0;min-width:0;background:var(--white);padding:10px;border-radius:24px;overflow:hidden}
+.luminary-photo-card img{width:100%;height:580px;object-fit:contain;border-radius:16px;background:var(--paper)}
+.luminary-photo-card figcaption{padding:14px 12px;font-size:.78rem;color:var(--forest)}
+@media(max-width:760px){.luminary-path{grid-template-columns:1fr}.luminary-path li>span{margin-bottom:16px}.luminary-photo-card img{height:auto}}
 
 /* InnoHub Lithuania UX/UI case study */
 .innohub-case{--inno-green:#36e056;--inno-teal:#003c3a;--inno-mint:#dff7e5;--inno-paper:#f7f9f5}
@@ -199,7 +219,7 @@
   .case-hero .breadcrumb{margin-bottom:30px}
   .case-hero h1{font-size:clamp(3.4rem,15vw,5.2rem)}
   .case-hero-brand{min-height:360px;border-radius:34% 34% 24px 24px}
-  .case-brand-label{top:30px;left:32px}
+  .case-brand-label{top:36px}
   .case-mockup-stage{padding-top:72px;padding-bottom:95px}
   .case-mockup-heading{display:block}
   .device-composition{padding:0 56px 52px 0}
@@ -671,14 +691,14 @@
 /* Footer navigation and direct contact details. */
 .skausmo-logo-surface{background:var(--white,#fff);color:var(--ink)}
 .skausmo-logo-surface:before{border-color:rgba(67,79,63,.2)}
-.skausmo-logo-surface .case-brand-label{color:var(--forest);top:64px;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:.1em}
+.skausmo-logo-surface .case-brand-label{color:var(--forest);top:64px;white-space:normal;letter-spacing:.1em}
 .skausmo-logo-surface img{width:100%;max-width:420px}
 .skausmo-case .case-mockup-heading>p{max-width:420px;color:#dfe4dd;margin:0}
 /* Geras odontologas case study: client artwork sits inside the approved empat.studio palette. */
 .geras-case .case-hero h1{font-size:clamp(3rem,5.6vw,5.5rem);overflow-wrap:anywhere}
 .geras-logo-surface{background:#fff;color:var(--ink);align-items:center;text-align:center}
 .geras-logo-surface:before{border-color:rgba(67,79,63,.2)}
-.geras-logo-surface .case-brand-label{color:var(--forest);top:58px;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:.1em}
+.geras-logo-surface .case-brand-label{color:var(--forest);top:58px;white-space:normal;letter-spacing:.1em}
 .geras-logo-surface img{width:min(100%,360px)}
 .geras-logo-surface p{margin-top:30px}
 .geras-visual-stage .case-mockup-heading>p{max-width:430px;margin:0;color:#dfe4dd}
