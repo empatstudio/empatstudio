@@ -12,6 +12,7 @@ const stripTags = (value) => value.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' 
 const readTag = (html, pattern) => html.match(pattern)?.[1]?.trim() || '';
 
 const activeSection = (route) => {
+  if (route === '/verslo-procesu-automatizavimas/') return 'automation';
   if (route === '/paslaugos/' || [
     '/svetainiu-kurimas/', '/web-dizainas/', '/seo-paslaugos/', '/brandingo-kurimas/',
     '/svetaines-auditas/', '/verslo-procesu-automatizavimas/'
@@ -33,7 +34,7 @@ const header = (route) => {
     <a class="brand" href="/" aria-label="empat.studio pradžia"><img src="/assets/logo-dark.svg" alt="empat.studio" width="150" height="50"></a>
     <nav class="desktop-nav" id="primary-navigation" aria-label="Pagrindinė navigacija">
       ${navLink('/paslaugos/', 'Paslaugos', 'services', active)}
-      ${navLink('/marketingo-paslaugos/', 'Marketingas', 'marketing', active)}
+      ${navLink('/verslo-procesu-automatizavimas/', 'Automatizacijos', 'automation', active)}
       ${navLink('/darbai/', 'Portfolio', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
       <a class="mobile-nav-cta" href="${contactHref}">Aptarkime projektą</a>
@@ -49,6 +50,7 @@ const footer = (route) => {
     <a class="brand" href="/" aria-label="empat.studio pradžia"><img src="/assets/logo-light.svg" alt="empat.studio" width="150" height="50"></a>
     <nav aria-label="Apatinė navigacija">
       ${navLink('/paslaugos/', 'Paslaugos', 'services', active)}
+      ${navLink('/verslo-procesu-automatizavimas/', 'Automatizacijos', 'automation', active)}
       ${navLink('/marketingo-paslaugos/', 'Marketingas', 'marketing', active)}
       ${navLink('/darbai/', 'Portfolio', 'work', active)}
       ${navLink('/apie/', 'Apie', 'about', active)}
@@ -106,7 +108,7 @@ const organizationSchema = {
   logo: `${siteUrl}/assets/logo-dark.svg`,
   email: 'info.empatstudio@gmail.com',
   telephone: '+37060824275',
-  description: 'Svetainių kūrimo, UX/UI dizaino, brandingo, SEO ir skaitmeninio marketingo studija.'
+  description: 'Svetainių kūrimo, UX/UI dizaino ir verslo procesų automatizavimo studija. Papildomos paslaugos: brandingas, SEO ir marketingas.'
 };
 
 export function renderPage(source, page) {
