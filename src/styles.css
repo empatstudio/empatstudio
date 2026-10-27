@@ -455,6 +455,8 @@
 .thank-you{min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 
 .article-layout>*{min-width:0}.article-body{min-width:0}.article-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.article-table tbody,.article-table thead{min-width:620px}
+.article-hero h1{overflow-wrap:anywhere}
+@media(max-width:600px){.article-hero h1{font-size:clamp(1.85rem,8vw,2.65rem)}}
 
 @media(max-width:900px){
   body.menu-open{overflow:hidden}
