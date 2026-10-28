@@ -32,6 +32,55 @@ window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const zoomLinks = document.querySelectorAll('[data-image-zoom]');
+if (zoomLinks.length && typeof HTMLDialogElement !== 'undefined') {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'case-lightbox';
+  dialog.setAttribute('aria-labelledby', 'case-lightbox-title');
+  dialog.innerHTML = '<div class="case-lightbox-bar"><h2 id="case-lightbox-title"></h2><button type="button" data-zoom-toggle aria-pressed="false">Priartinti</button><button type="button" data-zoom-close aria-label="Uždaryti išdidintą vaizdą">Uždaryti ×</button></div><div class="case-lightbox-scroll" tabindex="0" aria-label="Išdidintas projekto vaizdas"><img alt=""><p class="case-lightbox-error" role="status" hidden>Nepavyko įkelti vaizdo. Uždaryk langą ir pabandyk dar kartą.</p></div>';
+  document.body.append(dialog);
+  const picture = dialog.querySelector('img');
+  const title = dialog.querySelector('h2');
+  const toggleZoom = dialog.querySelector('[data-zoom-toggle]');
+  const scroller = dialog.querySelector('.case-lightbox-scroll');
+  const error = dialog.querySelector('.case-lightbox-error');
+  let opener;
+  zoomLinks.forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    opener = link;
+    title.textContent = link.querySelector('img')?.alt || 'Projekto vaizdas';
+    picture.alt = title.textContent;
+    error.hidden = true;
+    picture.hidden = false;
+    picture.src = link.href;
+    dialog.classList.remove('is-zoomed');
+    toggleZoom.setAttribute('aria-pressed', 'false');
+    toggleZoom.textContent = 'Priartinti';
+    dialog.showModal();
+    document.body.classList.add('case-lightbox-open');
+    scroller.scrollTop = 0;
+    scroller.scrollLeft = 0;
+    dialog.querySelector('[data-zoom-close]').focus();
+  }));
+  picture.addEventListener('error', () => { error.hidden = false; picture.hidden = true; });
+  dialog.querySelector('[data-zoom-close]').addEventListener('click', () => dialog.close());
+  toggleZoom.addEventListener('click', () => {
+    const zoomed = dialog.classList.toggle('is-zoomed');
+    toggleZoom.setAttribute('aria-pressed', String(zoomed));
+    toggleZoom.textContent = zoomed ? 'Talpinti lange' : 'Priartinti';
+  });
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('case-lightbox-open');
+    opener?.focus({ preventScroll: true });
+  });
+}
+
 const portfolioFilters = document.querySelector('[data-portfolio-filters]');
 
 if (portfolioFilters) {
@@ -54,6 +103,46 @@ if (portfolioFilters) {
       : `Rodomi ${visibleCount} projektai`;
   }));
 }
+
+document.querySelectorAll('[data-card-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('[data-card-track]');
+  const slides = [...carousel.querySelectorAll('[data-card-slide]')];
+  const previous = carousel.querySelector('[data-card-prev]');
+  const next = carousel.querySelector('[data-card-next]');
+  const status = carousel.querySelector('[data-card-status]');
+  const controls = carousel.querySelector('[data-card-controls]');
+  if (!track || !slides.length || !previous || !next) return;
+  const update = () => {
+    const bounds = track.getBoundingClientRect();
+    const visible = slides.map((slide, index) => ({ index, rect: slide.getBoundingClientRect() }))
+      .filter(({ rect }) => rect.right > bounds.left + 12 && rect.left < bounds.right - 12);
+    previous.disabled = track.scrollLeft < 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    if (status && visible.length) {
+      const first = visible[0].index + 1;
+      const last = visible[visible.length - 1].index + 1;
+      const text = `${first === last ? first : `${first}–${last}`} / ${slides.length}`;
+      if (status.textContent !== text) status.textContent = text;
+    }
+  };
+  const move = (direction) => {
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const step = slides[0].getBoundingClientRect().width + gap;
+    track.scrollBy({ left: direction * step, behavior: reduceMotion ? 'instant' : 'smooth' });
+  };
+  previous.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('keydown', (event) => {
+    if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    move(event.key === 'ArrowLeft' ? -1 : 1);
+  });
+  track.addEventListener('scroll', update, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
+  else window.addEventListener('resize', update);
+  if (controls) controls.hidden = false;
+  update();
+});
 
 const reviewCarousel = document.querySelector('[data-review-carousel]');
 

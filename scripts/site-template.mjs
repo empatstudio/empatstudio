@@ -188,7 +188,7 @@ export function renderPage(source, page) {
   const analyticsUi = ga4Id ? `
   <aside class="analytics-consent" data-analytics-consent aria-labelledby="analytics-consent-title" hidden>
     <div>
-      <h2 id="analytics-consent-title">Ar galiu matuoti svetainės lankomumą?</h2>
+      <h2 id="analytics-consent-title">Ar galime matuoti svetainės lankomumą?</h2>
       <p>Naudojame „Google Analytics 4“, kad suprastume, kurie puslapiai tau naudingi. Analitika įsijungs tik tau sutikus. <a href="/privatumo-politika/">Daugiau apie privatumą</a>.</p>
     </div>
     <div class="analytics-consent-actions">
