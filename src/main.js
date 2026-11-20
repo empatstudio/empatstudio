@@ -30,6 +30,27 @@ window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
   if (event.matches) setMenuOpen(false);
 });
 
+document.querySelectorAll('.contact-form').forEach(form => {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const button = form.querySelector('[type="submit"]');
+    if (button.disabled) return;
+    let status = form.querySelector('[data-send-status]');
+    if (!status) { status = document.createElement('p'); status.dataset.sendStatus = ''; status.setAttribute('role', 'status'); form.append(status); }
+    button.disabled = true;
+    status.textContent = 'Siunčiama…';
+    try {
+      const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(form))), signal: AbortSignal.timeout(18000) });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) throw new Error(result.error || 'Nepavyko išsiųsti.');
+      window.location.assign('/aciu/');
+    } catch {
+      status.textContent = 'Užklausa neišsiųsta. Tavo tekstas liko formoje. Bandyk dar kartą arba parašyk info.empatstudio@gmail.com.';
+      button.disabled = false;
+    }
+  });
+});
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const zoomLinks = document.querySelectorAll('[data-image-zoom]');
