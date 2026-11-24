@@ -32,6 +32,7 @@ const pages = [
   { source: 'reels-kurimas.html', target: 'reels-kurimas/index.html', route: '/reels-kurimas/', label: 'Reels kūrimas', parent: marketingParent, proof: reviews.mytravis },
   { source: 'lead-generation.html', target: 'lead-generation/index.html', route: '/lead-generation/', label: 'Lead generation', parent: marketingParent, proof: reviews.mytravis },
   { source: 'darbai.html', target: 'darbai/index.html', route: '/darbai/', label: 'Portfolio' },
+  { source: 'paltaja.html', target: 'darbai/paltaja/index.html', route: '/darbai/paltaja/', label: 'Paltaja', parent: workParent, shareImage: '/assets/projects/paltaja/website-desktop.webp' },
   { source: 'vejos-robotai.html', target: 'darbai/vejos-robotai/index.html', route: '/darbai/vejos-robotai/', label: 'Vejos Robotai', parent: workParent, shareImage: '/assets/projects/vejos-robotai/website-desktop.jpg' },
   { source: 'innohub-lithuania.html', target: 'darbai/innohub-lithuania/index.html', route: '/darbai/innohub-lithuania/', label: 'InnoHub Lithuania', parent: workParent, shareImage: '/assets/projects/innohub-lithuania/website-desktop.jpg' },
   { source: 'dainius-zalimas.html', target: 'darbai/dainius-zalimas/index.html', route: '/darbai/dainius-zalimas/', label: 'Dainius Žalimas', parent: workParent, shareImage: '/assets/projects/dainius-zalimas/website-desktop.jpg' },
