@@ -53,6 +53,22 @@ document.querySelectorAll('.contact-form').forEach(form => {
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const scrollPreview = document.querySelector('video[data-scroll-preview]');
+if (scrollPreview && 'IntersectionObserver' in window) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let canStart = true;
+  scrollPreview.addEventListener('play', () => { canStart = false; }, { once: true });
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) {
+      scrollPreview.pause();
+    } else if (entry.intersectionRatio >= 0.45 && canStart && !reducedMotion.matches && !navigator.connection?.saveData) {
+      canStart = false;
+      scrollPreview.play().catch(() => { /* Native controls remain available. */ });
+    }
+  }, { threshold: [0, 0.45] });
+  observer.observe(scrollPreview);
+}
+
 const zoomLinks = document.querySelectorAll('[data-image-zoom]');
 if (zoomLinks.length && typeof HTMLDialogElement !== 'undefined') {
   const dialog = document.createElement('dialog');
@@ -119,9 +135,7 @@ if (portfolioFilters) {
       if (!card.hidden) visibleCount += 1;
     });
 
-    if (results) results.textContent = visibleCount === 1
-      ? 'Rodomas 1 projektas'
-      : `Rodomi ${visibleCount} projektai`;
+    if (results) results.textContent = `Projektų skaičius: ${visibleCount}`;
   }));
 }
 

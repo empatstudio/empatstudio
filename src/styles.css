@@ -80,6 +80,7 @@
 .browser-chrome>span:first-child{background:#8d9689}
 .browser-chrome small{margin-left:12px;font-size:.62rem;letter-spacing:.02em}
 .browser-mockup img{width:100%;height:auto}
+.browser-mockup video{display:block;width:100%;height:auto}
 .phone-mockup{position:absolute;width:clamp(190px,22vw,276px);right:0;bottom:0;margin:0;padding:11px;background:#101010;border:2px solid #4b4b4b;border-radius:38px;box-shadow:0 28px 70px rgba(0,0,0,.45);z-index:2}
 .phone-mockup img,.mini-phone img{width:100%;height:auto;border-radius:27px}
 .phone-speaker{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:66px;height:16px;border-radius:999px;background:#101010;z-index:2}
