@@ -53,20 +53,22 @@ document.querySelectorAll('.contact-form').forEach(form => {
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const scrollPreview = document.querySelector('video[data-scroll-preview]');
-if (scrollPreview && 'IntersectionObserver' in window) {
+if ('IntersectionObserver' in window) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let canStart = true;
-  scrollPreview.addEventListener('play', () => { canStart = false; }, { once: true });
-  const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) {
-      scrollPreview.pause();
-    } else if (entry.intersectionRatio >= 0.45 && canStart && !reducedMotion.matches && !navigator.connection?.saveData) {
-      canStart = false;
-      scrollPreview.play().catch(() => { /* Native controls remain available. */ });
-    }
-  }, { threshold: [0, 0.45] });
-  observer.observe(scrollPreview);
+  document.querySelectorAll('video[data-scroll-preview]').forEach(scrollPreview => {
+    let canStart = true;
+    scrollPreview.addEventListener('play', () => { canStart = false; }, { once: true });
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        if (!scrollPreview.paused) canStart = true;
+        scrollPreview.pause();
+      } else if (entry.intersectionRatio >= 0.45 && canStart && !reducedMotion.matches && !navigator.connection?.saveData) {
+        canStart = false;
+        scrollPreview.play().catch(() => { /* Native controls remain available. */ });
+      }
+    }, { threshold: [0, 0.45] });
+    observer.observe(scrollPreview);
+  });
 }
 
 const zoomLinks = document.querySelectorAll('[data-image-zoom]');
