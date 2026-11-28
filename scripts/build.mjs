@@ -32,6 +32,7 @@ const pages = [
   { source: 'reels-kurimas.html', target: 'reels-kurimas/index.html', route: '/reels-kurimas/', label: 'Reels kūrimas', parent: marketingParent, proof: reviews.mytravis },
   { source: 'lead-generation.html', target: 'lead-generation/index.html', route: '/lead-generation/', label: 'Lead generation', parent: marketingParent, proof: reviews.mytravis },
   { source: 'darbai.html', target: 'darbai/index.html', route: '/darbai/', label: 'Portfolio' },
+  { source: 'kerut-homes.html', target: 'darbai/kerut-homes/index.html', route: '/darbai/kerut-homes/', label: 'Kerut Homes', parent: workParent, shareImage: '/assets/projects/kerut-homes/homepage-scroll-poster.webp' },
   { source: 'forest-oasis.html', target: 'darbai/forest-oasis/index.html', route: '/darbai/forest-oasis/', label: 'Forest Oasis', parent: workParent, shareImage: '/assets/projects/forest-oasis/website-desktop.webp' },
   { source: 'mytravis.html', target: 'darbai/mytravis/index.html', route: '/darbai/mytravis/', label: 'MyTravis', parent: workParent, shareImage: '/assets/projects/mytravis/homepage.webp' },
   { source: 'kalbu-judesiu.html', target: 'darbai/kalbu-judesiu/index.html', route: '/darbai/kalbu-judesiu/', label: 'Kalbu judesiu', parent: workParent, shareImage: '/assets/projects/kalbu-judesiu/website-desktop.webp' },
